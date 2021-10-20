@@ -1,0 +1,36 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Nos magnifiques annonces !{% endblock %}
+
+{% block body %}
+<div class="container">
+    <h1 class="mb-3">Voici les annonces de nos hôtes !</h1>
+
+    <div class="row">
+        {% for co in contacts %}
+            
+
+            <div class="col-md-4">
+                <div class="card bg-light mb-3">
+                    <div class="card-header text-center">
+                        {{ co.nom }} {{ co.prenom }} et numéro de téléphone : {{ co.numtelephone }} <br>
+                    </div>
+                    <a href="#">
+                    <img src="{{co.avatar}}" alt="Image de l'avatar" style="height : 200px; width: 100%; display: block">
+                    </a>
+                    <div class="card-body">
+                        <h4 class="card-title">
+                            <a href="#">{{ co.nom }} {{ co.prenom }}</a>
+                        </h4>
+                        
+                        <a href="{{ path('contact_exact',{'id' : co.id}) }}" class="btn btn-secondary">afficher le détail</a>
+                    </div>
+                </div>
+            </div>
+        {% endfor %}
+    </div>
+</div>
+
+
+
+{% endblock %}

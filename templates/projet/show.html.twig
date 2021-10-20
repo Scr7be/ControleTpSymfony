@@ -1,0 +1,20 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}
+    {{contact.nom }} {{contact.prenom }}
+{% endblock %}
+
+{% block body%}
+<div class="contact-title" style ="background-image:url({{contact.avatar}})">
+    <div class="container">
+        <h1>{{contact.nom }} {{contact.prenom }}</h1>
+        <p>Votre adresse {{contact.adresse}} </br>
+        Votre adresse mail {{contact.adrmail }}</br>
+        Votre code postal {{contact.codepostal }}</br>
+        Votre ville {{contact.ville}}</br>
+        Votre numéro de téléphone {{contact.numtelephone }}</br>
+        </p>
+        <a href="#" class="btn btn-primary">Réserver !</a>
+    </div>
+</div>
+{% endblock %}
